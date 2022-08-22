@@ -1,2 +1,54 @@
 
-GET http://localhost:5000
+POST  http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "username": "vinhlq23",
+    "password": "123"
+}
+
+###
+
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "vinhlq1",
+    "password": "123"
+}
+
+###
+
+POST http://localhost:5000/api/posts
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzAzYWEwNWEwOTgyM2IyY2U2MzJkZGYiLCJpYXQiOjE2NjExODQ2MjB9.3gVrhyIzw_GHKzTJt52B1vKUhziT5ujHpsTpCO6o-Ho
+
+{
+    "title": "test22",
+    "description": "vinhlq",
+    "url": "123"
+}
+
+###
+GET http://localhost:5000/api/posts
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzAzYWEwNWEwOTgyM2IyY2U2MzJkZGYiLCJpYXQiOjE2NjExODUxOTB9.VFQWNvSWRB0q_doJ0dWCEx8_C6wOvwu_MDMcOgHJIJE
+
+###
+
+PUT  http://localhost:5000/api/posts/6303aadfb4a2aef18cb2a796
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzAzYWEwNWEwOTgyM2IyY2U2MzJkZGYiLCJpYXQiOjE2NjExODQ2MjB9.3gVrhyIzw_GHKzTJt52B1vKUhziT5ujHpsTpCO6o-Ho
+
+{
+    "title": "react",
+    "description": "qqqqqqqqqqqqqqqqqqqqqqq",
+    "url": "123"
+}
+
+###
+
+DELETE   http://localhost:5000/api/posts/6303aadfb4a2aef18cb2a796
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzAzYWEwNWEwOTgyM2IyY2U2MzJkZGYiLCJpYXQiOjE2NjExODYyODZ9.ChjE5zCrzEiAQ7EzVxUJRoSf_zevR5iecWXqDc617hw
+

@@ -1,6 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
 
+const authRouter = require('./routes/auth');
+const postRouter = require('./routes/post');
+
+
 const connectDB = async () => {
     try {
         await mongoose.connect('mongodb://localhost:27017/Mern-LearnIT', {
@@ -17,8 +21,10 @@ const connectDB = async () => {
 connectDB();
 
 const app = express();
+app.use(express.json());
 
-app.get('/', (rea, res) => console.log('hello'));
+app.use('/api/auth', authRouter);
+app.use('/api/posts', postRouter);
 
 const PORT = 5000;
 
