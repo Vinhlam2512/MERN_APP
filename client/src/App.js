@@ -4,6 +4,8 @@ import Landing from './components/layout/Landing';
 import Auth from './Views/Auth';
 import AuthContextProvider from './contexts/AuthContext';
 import Dashboard from './Views/Dashboard';
+import ProtecedRoute from './components/routing/ProtecedRoute';
+import About from './Views/About';
 
 function App() {
     return (
@@ -13,7 +15,8 @@ function App() {
                     <Route exact path='/' component={Landing} />
                     <Route exact path='/login' render={props => <Auth {...props} authRoute='login' />} />
                     <Route exact path='/register' render={props => <Auth {...props} authRoute='register' />} />
-                    <Route exact path='/dashboard' component={Dashboard} />
+                    <ProtecedRoute exact path='/dashboard' component={Dashboard} />
+                    <ProtecedRoute exact path='/about' component={About} />
                 </Switch>
             </Router>
         </AuthContextProvider>
